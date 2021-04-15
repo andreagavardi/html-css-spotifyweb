@@ -30,7 +30,7 @@ header {
   left: 60px;
   width: calc(100% - 60px);
   height: 60px;
-  background: rgba(248, 4, 4, 0.479);
+  background: rgba(0, 0, 0, 0.342);
 }
 
 header,
@@ -47,7 +47,7 @@ MAIN
   height: calc(100vh - 60px);
   width: 60px;
   z-index: 2;
-  background: rgb(3, 68, 245);
+  background: black;
 }
 
 section.content {
