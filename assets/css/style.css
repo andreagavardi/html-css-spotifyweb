@@ -29,14 +29,35 @@ HEADER
 header {
   left: 60px;
   width: calc(100% - 60px);
-  height: 60px;
+  /* height: 60px; */
   background: rgba(0, 0, 0, 0.342);
+  z-index: 2;
 }
 
 header,
 .sidebar {
   position: fixed;
   top: 0;
+}
+
+header > .container {
+  max-width: 100%;
+}
+
+header .row {
+  padding: 20px;
+}
+
+header .btn {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+header .btn:hover {
+  transform: scale(1.15);
+}
+header .btn-outline-light:hover {
+  color: white;
+  background-color: transparent;
 }
 
 /*******************
@@ -55,8 +76,9 @@ section.content {
   top: 0;
   padding: 50px;
   width: calc(100% - 60px);
-  min-height: calc(100vh - 60px);
-  margin: 60px 0 0 60px;
+  max-height: calc(100vh - 60px);
+  margin: 0 0 0 60px;
+  overflow-y: auto;
 }
 
 /*******************
