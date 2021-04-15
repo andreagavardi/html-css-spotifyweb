@@ -23,13 +23,21 @@ Common Rules
   color: #a5ea34;
 }
 
+.unstile {
+  list-style: none;
+}
+
+/* testi */
+.text_small {
+  font-size: 0.9rem;
+}
+
 /******************
 HEADER
 *******************/
 header {
   left: 60px;
   width: calc(100% - 60px);
-  /* height: 60px; */
   background: rgba(0, 0, 0, 0.342);
   z-index: 2;
 }
@@ -49,7 +57,7 @@ header .row {
 }
 
 header .btn {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 header .btn:hover {
@@ -63,22 +71,68 @@ header .btn-outline-light:hover {
 /*******************
 MAIN
 ********************/
+
+/* barra di navigazione laterale */
+
 .sidebar {
   left: 0;
   height: calc(100vh - 60px);
-  width: 60px;
+  width: 200px;
   z-index: 2;
   background: black;
 }
 
+.sidebar .logo img {
+  max-width: 70%;
+  height: auto;
+}
+
+.sidebar .nav_main li,
+.sidebar .playlist li {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+.sidebar .nav_main li a,
+.sidebar .playlist li a {
+  text-decoration: none;
+  color: #6d6d6d;
+  font-size: 0.75rem;
+}
+
+.sidebar .nav_main li img {
+  width: 25px;
+  opacity: 0.85;
+}
+
+.add::before {
+  content: "\002B";
+  background-color: #a3a3a3;
+  color: black;
+  padding: 0 10px;
+  font-size: 1.25rem;
+  margin-right: 1rem;
+}
+
+/* main content */
 section.content {
   position: absolute;
   top: 0;
   padding: 50px;
-  width: calc(100% - 60px);
   max-height: calc(100vh - 60px);
-  margin: 0 0 0 60px;
+  margin-left: 200px;
   overflow-y: auto;
+}
+
+/* modifica scrollbar */
+.content::-webkit-scrollbar {
+  background-color: #f1f1f1;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 10px;
+  height: 70vh;
 }
 
 /*******************
