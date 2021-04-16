@@ -77,7 +77,7 @@ MAIN
   min-height: 100%;
   width: 200px;
   background: black;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 .sidebar .logo img {
@@ -89,7 +89,7 @@ MAIN
 .sidebar .playlist li {
   display: flex;
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
 }
 .sidebar .nav_main li a,
 .sidebar .playlist li a,
@@ -106,7 +106,7 @@ MAIN
 
 .sidebar .nav_main li.active {
   margin-left: -1.35rem;
-  border-left: 2px solid #a5ea34;
+  border-left: 3px solid #a5ea34;
   padding-left: 1.35rem;
 }
 .sidebar .nav_main li.active a {
@@ -127,7 +127,15 @@ MAIN
   margin-right: 1rem;
 }
 
-.sidebar .personal span:first-child {
+.sidebar .playlist {
+  overflow-y: auto;
+  min-height: 50%;
+}
+
+.sidebar .personal {
+  overflow-y: hidden;
+}
+.sidebar .personal > a {
   border-bottom: 1px solid grey;
   padding: 5px;
 }
