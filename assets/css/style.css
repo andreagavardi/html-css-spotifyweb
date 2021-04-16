@@ -49,20 +49,14 @@ MAIN
 }
 
 /* barra fissa in alto */
-.top_bar {
-  left: 200px;
-  width: calc(100% - 200px);
-  background: rgba(0, 0, 0, 0.342);
-  z-index: 2;
-}
 
 .top_bar {
   position: fixed;
   top: 0;
-}
-
-.top_bar .row {
-  padding: 20px;
+  right: 0;
+  width: calc(100% - 200px);
+  background: rgba(0, 0, 0, 0.342);
+  /* z-index: 2; */
 }
 
 .top_bar .btn {
@@ -80,10 +74,10 @@ MAIN
 /* barra di navigazione laterale */
 
 .sidebar {
-  height: 100%;
+  min-height: 100%;
   width: 200px;
   background: black;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 .sidebar .logo img {
@@ -98,10 +92,25 @@ MAIN
   padding: 0.5rem 0;
 }
 .sidebar .nav_main li a,
-.sidebar .playlist li a {
+.sidebar .playlist li a,
+.sidebar .personal a {
   text-decoration: none;
   color: #6d6d6d;
   font-size: 0.75rem;
+}
+.sidebar .nav_main li:hover a,
+.sidebar .playlist li:hover a,
+.sidebar .personal a:hover {
+  color: white;
+}
+
+.sidebar .nav_main li.active {
+  margin-left: -1.35rem;
+  border-left: 2px solid #a5ea34;
+  padding-left: 1.35rem;
+}
+.sidebar .nav_main li.active a {
+  color: white;
 }
 
 .sidebar .nav_main li img {
@@ -118,11 +127,23 @@ MAIN
   margin-right: 1rem;
 }
 
+.sidebar .personal span:first-child {
+  border-bottom: 1px solid grey;
+  padding: 5px;
+}
+.sidebar .personal img {
+  padding: 2px;
+  height: auto;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #6d6d6d;
+}
+
 /* main content */
 section.content {
   padding: 50px;
   height: 100%;
-  width: 100%;
+  width: calc(100% - 200px);
   overflow-y: auto;
 }
 
