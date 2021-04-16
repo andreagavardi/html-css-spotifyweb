@@ -56,7 +56,6 @@ MAIN
   right: 0;
   width: calc(100% - 200px);
   background: rgba(0, 0, 0, 0.342);
-  /* z-index: 2; */
 }
 
 .top_bar .btn {
@@ -83,6 +82,9 @@ MAIN
 .sidebar .logo img {
   max-width: 70%;
   height: auto;
+}
+.logo [alt*="logo_small"] {
+  display: none;
 }
 
 .sidebar .nav_main li,
@@ -135,7 +137,7 @@ MAIN
 .sidebar .personal {
   overflow-y: hidden;
 }
-.sidebar .personal > a {
+.sidebar .personal .install {
   border-bottom: 1px solid grey;
   padding: 5px;
 }
@@ -147,12 +149,20 @@ MAIN
   background-color: #6d6d6d;
 }
 
+.install i {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 2px 0px;
+  color: white;
+}
+
 /* main content */
 section.content {
   padding: 50px;
   height: 100%;
   width: calc(100% - 200px);
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* modifica scrollbar */
@@ -173,7 +183,36 @@ footer {
   height: 60px;
 }
 
-/* media query per altezza view.port */
+/* responsive */
 
-@media screen and (max-height: 375px) {
+@media screen and (max-width: 575.98px) {
+  .top_bar {
+    width: calc(100% - 60px);
+  }
+
+  .sidebar {
+    width: 60px;
+    padding-left: 0.5rem !important;
+  }
+  .sidebar .logo img:first-child,
+  .nav_main li a,
+  .playlist,
+  .personal a {
+    display: none;
+    border-bottom: hidden;
+  }
+  .logo [alt*="logo_small"] {
+    display: block;
+  }
+  .sidebar .nav_main li.active,
+  .sidebar .personal .install {
+    border: none;
+  }
+
+  .install {
+    justify-content: flex-end !important;
+  }
+  section.content {
+    width: calc(100% - 60px);
+  }
 }
