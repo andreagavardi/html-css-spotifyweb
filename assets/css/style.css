@@ -12,6 +12,12 @@ body {
 .bg_darkgrey {
   background-color: #282828;
 }
+.bg_darkgrey2 {
+  background-color: #5a5a5a;
+}
+.bg_grey {
+  background-color: #d2d2d2;
+}
 .text_grey {
   color: #6d6d6d;
 }
@@ -33,6 +39,9 @@ body {
 .text_small {
   font-size: 0.9rem;
 }
+.text_xs {
+  font-size: 0.75rem;
+}
 
 /******************
 HEADER
@@ -43,7 +52,7 @@ MAIN
 ********************/
 
 #site_main {
-  height: calc(100% - 60px);
+  height: calc(100% - 80px);
   width: 100%;
   position: relative;
 }
@@ -105,7 +114,6 @@ MAIN
 .sidebar .personal a:hover {
   color: white;
 }
-
 .sidebar .nav_main li.active {
   margin-left: -1.35rem;
   border-left: 3px solid #a5ea34;
@@ -114,7 +122,6 @@ MAIN
 .sidebar .nav_main li.active a {
   color: white;
 }
-
 .sidebar .nav_main li img {
   width: 25px;
   opacity: 0.85;
@@ -152,7 +159,6 @@ MAIN
 .install i {
   border: 1px solid white;
   border-radius: 50%;
-  padding: 2px 0px;
   color: white;
 }
 
@@ -169,7 +175,6 @@ section.content {
 .content::-webkit-scrollbar {
   background-color: #f1f1f1;
 }
-
 .content::-webkit-scrollbar-thumb {
   background-color: #c1c1c1;
   border-radius: 10px;
@@ -180,9 +185,39 @@ section.content {
 FOOTER
 ********************/
 footer {
-  height: 60px;
+  height: 80px;
+  /* overflow-x: hidden; */
 }
 
+.song_played img {
+  width: 50px;
+}
+.song_played .detail span {
+  line-height: 0.75rem;
+}
+
+.player .commands .fas {
+  margin: 0 15px;
+}
+.controls i {
+  margin: 0 10px;
+}
+
+.progress {
+  background-color: #5a5a5a;
+}
+.progress .progress-bar {
+  border-radius: 5px;
+  width: 25%;
+  height: 100%;
+}
+
+.player .progress {
+  min-width: 20vw;
+}
+.controls .progress {
+  min-width: 15vw;
+}
 /* responsive */
 
 @media screen and (max-width: 575.98px) {
@@ -214,5 +249,22 @@ footer {
   }
   section.content {
     width: calc(100% - 60px);
+  }
+
+  /*************
+  footer
+  **************/
+  .played .preferenze {
+    margin-left: 0 !important;
+  }
+  .player .commands .fas {
+    margin: 0 5px;
+  }
+  .controls i {
+    margin: 0 2px;
+  }
+
+  .player .progress {
+    margin: 0 0.5rem !important;
   }
 }
