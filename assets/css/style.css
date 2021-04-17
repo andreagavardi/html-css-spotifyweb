@@ -4,6 +4,25 @@ Common Rules
 body {
   height: 100vh;
 }
+
+.circle-progress {
+  position: absolute;
+  left: 23%;
+  bottom: -10px;
+  font-size: 1rem;
+  visibility: hidden;
+}
+.controls .circle-progress {
+  left: 20%;
+}
+.time_line:hover .progress-bar {
+  background-color: rgb(130, 206, 7);
+  cursor: pointer;
+}
+.time_line:hover .circle-progress {
+  visibility: visible;
+}
+
 /* colori */
 
 .bg_mainblue {
