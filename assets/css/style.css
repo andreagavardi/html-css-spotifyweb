@@ -71,12 +71,24 @@ MAIN
   font-size: 1rem;
   font-weight: 600;
 }
+
 .top_bar .btn:hover {
   transform: scale(1.15);
 }
 .top_bar .btn-outline-light:hover {
   color: white;
   background-color: transparent;
+}
+
+.btn-outline-light:not(:disabled):not(.disabled):active {
+  transform: translate(0px, 0.25rem);
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+.btn-outline-light:focus {
+  box-shadow: none;
 }
 
 /* barra di navigazione laterale */
