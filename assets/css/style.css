@@ -62,10 +62,6 @@ body {
   font-size: 0.75rem;
 }
 
-/******************
-HEADER
-*******************/
-
 /*******************
 MAIN
 ********************/
@@ -195,11 +191,45 @@ MAIN
 
 /* main content */
 section.content {
-  padding: 50px;
   height: 100%;
+  padding-top: 70px;
   width: calc(100% - 200px);
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.content .list-unstyled a {
+  color: #6d6d6d;
+  padding: 0 10px;
+}
+.content .list-unstyled li:first-child::after {
+  content: "";
+  height: 2px;
+  width: 30px;
+  background-color: #a5ea34;
+  display: block;
+}
+.content .list-unstyled a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* sezione albums */
+
+.album {
+  padding: 0 10px;
+}
+
+.copertina_album {
+  position: relative;
+}
+.copertina_album .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.432);
 }
 
 /* modifica scrollbar */
@@ -222,6 +252,9 @@ footer {
 
 .song_played img {
   width: 50px;
+}
+.detail a:hover {
+  color: white;
 }
 .song_played .detail span {
   line-height: 0.75rem;
@@ -250,6 +283,12 @@ footer {
   min-width: 15vw;
 }
 /* responsive */
+
+@media screen and (max-width: 767.98px) {
+  .controls i {
+    margin: 0 2px;
+  }
+}
 
 @media screen and (max-width: 575.98px) {
   .top_bar {
@@ -288,11 +327,9 @@ footer {
   .played .preferenze {
     margin-left: 0 !important;
   }
+
   .player .commands .fas {
     margin: 0 5px;
-  }
-  .controls i {
-    margin: 0 2px;
   }
 
   .player .progress {
