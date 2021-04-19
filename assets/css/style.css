@@ -347,8 +347,12 @@ footer {
   /*************
   footer
   **************/
+
+  .played .detail {
+    opacity: 0;
+  }
   .played .preferenze {
-    margin-left: 0 !important;
+    display: none;
   }
 
   .player .commands .fas {
@@ -357,5 +361,9 @@ footer {
 
   .player .progress {
     margin: 0 0.5rem !important;
+  }
+
+  .controls .time_line {
+    display: none;
   }
 }
