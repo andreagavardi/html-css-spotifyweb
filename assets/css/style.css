@@ -279,6 +279,9 @@ footer {
 .song_played .detail span {
   line-height: 0.75rem;
 }
+.preferenze a.text_grey:hover {
+  color: white;
+}
 
 .player .commands .fas {
   margin: 0 15px;
