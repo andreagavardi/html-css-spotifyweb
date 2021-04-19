@@ -131,6 +131,7 @@ MAIN
 }
 .sidebar .nav_main li a,
 .sidebar .playlist li a,
+.sidebar .playlist a,
 .sidebar .personal a {
   text-decoration: none;
   color: #6d6d6d;
@@ -138,6 +139,7 @@ MAIN
 }
 .sidebar .nav_main li:hover a,
 .sidebar .playlist li:hover a,
+.sidebar .playlist a:hover,
 .sidebar .personal a:hover {
   color: white;
 }
@@ -164,8 +166,11 @@ MAIN
 }
 
 .sidebar .playlist {
+  height: 100%;
+}
+.sidebar .playlist ul.unstile {
   overflow-y: auto;
-  min-height: 50%;
+  height: 50%;
 }
 
 .sidebar .personal {
@@ -223,13 +228,28 @@ section.content {
 .copertina_album {
   position: relative;
 }
-.copertina_album .overlay {
+
+.album_text {
+  line-height: 1rem;
+}
+
+/* overlay con icona play */
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.432);
+  transition: opacity 0.5s;
+}
+.copertina_album .overlay .far {
+  font-size: 3.5rem;
+}
+
+.copertina_album:hover .overlay {
+  opacity: 1;
 }
 
 /* modifica scrollbar */
