@@ -1,0 +1,401 @@
+/* BONUS ANIMAZIONE bottone top_bar */
+
+@keyframes bounce-in-left {
+  0% {
+    transform: translateX(-600px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(-68px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateX(-28px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateX(-8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+}
+
+/******
+Common Rules
+*******/
+body {
+  height: 100vh;
+}
+
+.circle-progress {
+  position: absolute;
+  left: 23%;
+  bottom: -10px;
+  font-size: 1rem;
+  visibility: hidden;
+}
+.controls .circle-progress {
+  left: 20%;
+}
+.time_line:hover .progress-bar {
+  background-color: rgb(130, 206, 7);
+  cursor: pointer;
+}
+.time_line:hover .circle-progress {
+  visibility: visible;
+}
+
+/* colori */
+
+.bg_mainblue {
+  background-color: #141922;
+}
+.bg_darkgrey {
+  background-color: #282828;
+}
+.bg_darkgrey2 {
+  background-color: #5a5a5a;
+}
+.bg_grey {
+  background-color: #d2d2d2;
+}
+.text_grey {
+  color: #6d6d6d;
+}
+.grey {
+  color: #d2d2d2;
+}
+.dark_grey {
+  color: #a3a3a3;
+}
+.green {
+  color: #a5ea34;
+}
+
+.unstile {
+  list-style: none;
+}
+
+/* testi */
+.text_small {
+  font-size: 0.9rem;
+}
+.text_xs {
+  font-size: 0.75rem;
+}
+
+/*******************
+MAIN
+********************/
+
+#site_main {
+  height: calc(100% - 80px);
+  width: 100%;
+  position: relative;
+}
+
+/* barra fissa in alto */
+
+.top_bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 200px);
+  background: rgba(0, 0, 0, 0.342);
+  z-index: 1;
+}
+
+.top_bar .btn {
+  font-size: 1rem;
+  font-weight: 600;
+  animation: bounce-in-left 1.1s;
+}
+
+.top_bar .btn:hover {
+  transform: scale(1.15);
+}
+.top_bar .btn-outline-light:hover {
+  color: white;
+  background-color: transparent;
+}
+
+.btn-outline-light:not(:disabled):not(.disabled):active {
+  transform: translate(0px, 0.25rem);
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+.btn-outline-light:focus {
+  box-shadow: none;
+}
+
+/* barra di navigazione laterale */
+
+.sidebar {
+  height: 100%;
+  width: 200px;
+  background: black;
+  overflow-y: hidden;
+}
+
+.sidebar .logo img {
+  max-width: 70%;
+  height: auto;
+}
+.logo [alt*="logo_small"] {
+  display: none;
+}
+
+.sidebar .nav_main li,
+.sidebar .playlist li {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+.sidebar .nav_main li a,
+.sidebar .playlist li a,
+.sidebar .playlist a,
+.sidebar .personal a {
+  text-decoration: none;
+  color: #6d6d6d;
+  font-size: 0.75rem;
+}
+.sidebar .nav_main li:hover a,
+.sidebar .playlist li:hover a,
+.sidebar .playlist a:hover,
+.sidebar .personal a:hover {
+  color: white;
+}
+.sidebar .nav_main li.active {
+  margin-left: -1.35rem;
+  border-left: 3px solid #a5ea34;
+  padding-left: 1.35rem;
+}
+.sidebar .nav_main li.active a {
+  color: white;
+}
+.sidebar .nav_main li img {
+  width: 25px;
+  opacity: 0.85;
+}
+
+.add::before {
+  content: "\002B";
+  background-color: #a3a3a3;
+  color: black;
+  padding: 0 10px;
+  font-size: 1.25rem;
+  margin-right: 1rem;
+}
+
+.sidebar .playlist {
+  height: 60%;
+}
+.sidebar .playlist ul.unstile {
+  max-height: 75%;
+  overflow-y: auto;
+}
+
+.sidebar .personal {
+  overflow-y: hidden;
+}
+.sidebar .personal .install {
+  border-bottom: 1px solid grey;
+  padding: 5px;
+}
+.sidebar .personal img {
+  padding: 2px;
+  height: auto;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #6d6d6d;
+}
+
+.install i {
+  border: 1px solid white;
+  border-radius: 50%;
+  color: white;
+}
+
+/* main content */
+section.content {
+  height: 100%;
+  padding-top: 70px;
+  width: calc(100% - 200px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.content .list-unstyled a {
+  color: #6d6d6d;
+  padding: 0 10px;
+}
+.content .list-unstyled li:first-child::after {
+  content: "";
+  height: 2px;
+  width: 30px;
+  background-color: #a5ea34;
+  display: block;
+}
+.content .list-unstyled a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* sezione albums */
+
+.album {
+  padding: 0 10px;
+}
+
+.copertina_album {
+  position: relative;
+}
+
+.album_text {
+  line-height: 1rem;
+}
+
+/* overlay con icona play */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.432);
+  transition: opacity 0.5s;
+}
+.copertina_album .overlay .far {
+  font-size: 3.5rem;
+}
+
+.copertina_album:hover .overlay {
+  opacity: 1;
+}
+
+/* modifica scrollbar */
+.content::-webkit-scrollbar {
+  background-color: #f1f1f1;
+}
+.content::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 10px;
+  height: 70vh;
+}
+
+/*******************
+FOOTER
+********************/
+footer {
+  height: 80px;
+}
+
+.song_played img {
+  width: 50px;
+}
+.detail a:hover {
+  color: white;
+}
+.song_played .detail span {
+  line-height: 0.75rem;
+}
+.preferenze a.text_grey:hover {
+  color: white;
+}
+
+.player .commands .fas {
+  margin: 0 15px;
+}
+.controls i {
+  margin: 0 10px;
+}
+
+.progress {
+  background-color: #5a5a5a;
+}
+.progress .progress-bar {
+  border-radius: 5px;
+  width: 25%;
+  height: 100%;
+}
+
+.player .progress {
+  min-width: 20vw;
+}
+.controls .progress {
+  min-width: 15vw;
+}
+/* responsive */
+
+@media screen and (max-width: 767.98px) {
+  .controls i {
+    margin: 0 2px;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .top_bar {
+    width: calc(100% - 60px);
+  }
+
+  .sidebar {
+    width: 60px;
+    padding-left: 0.5rem !important;
+  }
+  .sidebar .logo img:first-child,
+  .nav_main li a,
+  .playlist,
+  .personal a {
+    display: none;
+    border-bottom: hidden;
+  }
+  .logo [alt*="logo_small"] {
+    display: block;
+  }
+  .sidebar .nav_main li.active,
+  .sidebar .personal .install {
+    border: none;
+  }
+
+  .install {
+    justify-content: flex-end !important;
+  }
+  section.content {
+    width: calc(100% - 60px);
+  }
+
+  /*************
+  footer
+  **************/
+  .played .preferenze {
+    margin-left: 0 !important;
+  }
+
+  .player .commands .fas {
+    margin: 0 5px;
+  }
+
+  .player .progress {
+    margin: 0 0.5rem !important;
+  }
+}
