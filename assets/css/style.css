@@ -80,6 +80,7 @@ MAIN
   right: 0;
   width: calc(100% - 200px);
   background: rgba(0, 0, 0, 0.342);
+  z-index: 1;
 }
 
 .top_bar .btn {
