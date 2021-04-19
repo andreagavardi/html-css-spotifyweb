@@ -110,7 +110,7 @@ MAIN
 /* barra di navigazione laterale */
 
 .sidebar {
-  min-height: 100%;
+  height: 100%;
   width: 200px;
   background: black;
   overflow-y: hidden;
@@ -167,11 +167,11 @@ MAIN
 }
 
 .sidebar .playlist {
-  height: 100%;
+  height: 60%;
 }
 .sidebar .playlist ul.unstile {
+  max-height: 75%;
   overflow-y: auto;
-  height: 50%;
 }
 
 .sidebar .personal {
@@ -268,7 +268,6 @@ FOOTER
 ********************/
 footer {
   height: 80px;
-  /* overflow-x: hidden; */
 }
 
 .song_played img {
