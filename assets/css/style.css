@@ -127,7 +127,6 @@ MAIN
 .sidebar .nav_main li,
 .sidebar .playlist li {
   display: flex;
-  align-items: center;
   padding: 0.25rem 0;
 }
 .sidebar .nav_main li a,
@@ -149,9 +148,7 @@ MAIN
   border-left: 3px solid #a5ea34;
   padding-left: 1.35rem;
 }
-.sidebar .nav_main li.active a {
-  color: white;
-}
+
 .sidebar .nav_main li img {
   width: 25px;
   opacity: 0.85;
@@ -221,10 +218,6 @@ section.content {
 }
 
 /* sezione albums */
-
-.album {
-  padding: 0 10px;
-}
 
 .copertina_album {
   position: relative;
@@ -305,6 +298,7 @@ footer {
 .controls .progress {
   min-width: 15vw;
 }
+
 /* responsive */
 
 @media screen and (max-width: 767.98px) {
